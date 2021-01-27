@@ -6,6 +6,7 @@ import {
     Button, Row, Col, Label
 } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Loading } from './LoadingComponent';
 
     const maxLength = (len) => (val) => !(val) || (val.length <= len);
     const minLength = (len) => (val) => val && (val.length >= len);
@@ -104,8 +105,26 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
         }
     };
 
-    function RenderDish({dish}) {
-        if (dish != null)
+    function RenderDish({dish, isLoading, errMess}) {
+        if (isLoading) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <Loading />
+                    </div>
+                </div>
+            );
+        }
+        else if (errMess) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <h4>{props.errMess}</h4>
+                    </div>
+                </div>
+            );
+        }
+        else if (dish != null) 
             return (
                 <Card key={dish.id}>
                     <CardImg top src={dish.image} alt={dish.name} />
@@ -119,6 +138,7 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
             return (
                 <div></div>
             );
+
     }
 
     function RenderComments({comments, addComment, dishId}) {
@@ -156,7 +176,7 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-lg-5 m-1">
-                        <RenderDish dish = {props.dish}/>
+                        <RenderDish dish={props.dish} isLoading={props.isLoading} errMess={props.errMess} />
                     </div>
                     <div className="col-12 col-lg-5 m-1">
                         <RenderComments comments={props.comments}
