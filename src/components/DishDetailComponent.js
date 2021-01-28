@@ -7,6 +7,7 @@ import {
 } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
     const maxLength = (len) => (val) => !(val) || (val.length <= len);
     const minLength = (len) => (val) => val && (val.length >= len);
@@ -119,7 +120,7 @@ import { Loading } from './LoadingComponent';
             return(
                 <div className="container">
                     <div className="row">            
-                        <h4>{props.errMess}</h4>
+                        <h4>{errMess}</h4>
                     </div>
                 </div>
             );
@@ -127,7 +128,7 @@ import { Loading } from './LoadingComponent';
         else if (dish != null) 
             return (
                 <Card key={dish.id}>
-                    <CardImg top src={dish.image} alt={dish.name} />
+                    <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                     <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardText>{dish.description}</CardText>
