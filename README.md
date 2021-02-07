@@ -1,4 +1,37 @@
 # Getting Started with Create React App
+Client-side Development of a Restaurant Web Application with React, JavaScript and Bootstrap
+
+1. Create a new project using React
+
+
+2. Create React components within your React application
+
+
+3. Develop a React router based navigation to various views in your React application
+
+
+4. Develop a single page application using the React router support
+
+
+5. Create uncontrolled React forms
+
+
+6. Create controlled forms and perform form validation
+
+
+7. Create Redux Actions
+
+
+8. Develop Redux actions using Redux Thunk
+
+
+9. Develop client-server communication using Fetch
+
+
+10. Develop Fetch-based communication with a REST API server
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
