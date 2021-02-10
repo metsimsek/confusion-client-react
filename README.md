@@ -1,5 +1,5 @@
-# Getting Started with Create React App
-Client-side Development of a Restaurant Web Application with React, JavaScript and Bootstrap
+
+## Client-side Development of a Restaurant Web Application with React, JavaScript and Bootstrap
 
 1. Create a new project using React
 
@@ -32,6 +32,7 @@ Client-side Development of a Restaurant Web Application with React, JavaScript a
 
 
 
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
